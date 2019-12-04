@@ -24,8 +24,18 @@ class OpenMicTest < Minitest::Test
     assert_equal [sal, ali], open_mic.performers
   end
 
+  def test_it_knows_if_jokes_known_are_repeated
+    open_mic = OpenMic.new({location: "Comedy Works", date: "11-20-18"})
+    sal = User.new("Sal")
+    ali = User.new("Ali")
+    open_mic.welcome(sal)
+    open_mic.welcome(ali)
 
-
+    ali.learn(joke_1)
+    ali.learn(joke_2)
+binding.pry
+    open_mic.repeated_jokes
+  end
 
 
 

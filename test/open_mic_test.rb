@@ -5,7 +5,6 @@ require './lib/user'
 require './lib/joke'
 
 class OpenMicTest < Minitest::Test
-  
   def test_it_exists
     open_mic = OpenMic.new({location: "Comedy Works", date: "11-20-18"})
 

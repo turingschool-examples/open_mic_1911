@@ -12,6 +12,9 @@ class User
     @jokes << joke
   end
 
+  def tell_joke(user, joke)
+     user.learn_joke(joke)
+   end
 
 
 end

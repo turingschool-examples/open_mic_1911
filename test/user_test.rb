@@ -56,7 +56,7 @@ class UserTest < Minitest::Test
     sal.tell(ali, joke_2)
 
     assert_equal joke_1, ali.joke_by_id(1)
-    # assert_equal joke_2, ali.joke_by_id(2)
+    assert_equal joke_2, ali.joke_by_id(2)
   end
 
 end

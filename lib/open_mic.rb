@@ -11,5 +11,16 @@ class OpenMic
     @performers << user
   end
 
+  def repeated_jokes?
+    locate = Hash.new {|hash, key| hash[key] = []}
+
+    @performers.each do |joke|
+      locate[joke.user.id] << joke
+    end
+
+    if locate < 2<return false
+    else
+      return true
+    end
 
 end

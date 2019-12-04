@@ -9,4 +9,8 @@ class User
   def learn(joke)
     @jokes << joke
   end
+
+  def tell(person, joke)
+    person.jokes << joke
+  end
 end

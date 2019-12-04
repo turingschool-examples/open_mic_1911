@@ -3,6 +3,7 @@ require 'minitest/pride'
 require './lib/joke'
 require './lib/user'
 require 'pry'
+
 class UserTest < Minitest::Test
   def test_it_exists
     sal = User.new("Sal")

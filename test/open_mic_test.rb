@@ -34,10 +34,8 @@ class OpenMicTest < Minitest::Test
     @open_mic.welcome(@ali)
     @ali.learn(@joke_1)
     @ali.learn(@joke_2)
-    require "pry"; binding.pry
     assert_equal false, @open_mic.repeated_jokes?
     @sal.learn(@joke_1)
-    require "pry"; binding.pry
     assert_equal true, @open_mic.repeated_jokes?
   end
 end

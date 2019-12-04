@@ -12,21 +12,38 @@ class UserTest < Minitest::Test
   end
 
   def test_it_exists
-    assert_instance_of User, @user
+    assert_instance_of User, @user_1
   end
 
   def test_it_has_a_name
-    assert_equal "Sal", @user.name
+    assert_equal "Sal", @user_1.name
   end
 
   def test_it_can_hold_jokes
-    assert_equal [], @user.jokes
+    assert_equal [], @user_1.jokes
   end
 
   def test_it_can_learn_jokes
-    @user.learn_joke(@joke_1)
-    @user.learn_joke(@joke_2)
-    assert_equal [@joke_1, @joke_2], @user.jokes
+    @user_1.learn(@joke_1)
+    @user_1.learn(@joke_2)
+    assert_equal [@joke_1, @joke_2], @user_1.jokes
+  end
+
+  def test_it_can_tell_jokes_to_another_user
+    @user_1.learn(@joke_1)
+    @user_1.learn(@joke_2)
+    @user_1.tell(@user_2, @joke_1)
+    @user_1.tell(@user_2, @joke_2)
+    assert_equal [@joke_1, @joke_2], @user_2.jokes
+  end
+
+  def test_joke_by_id
+    @user_1.learn(@joke_1)
+    @user_1.learn(@joke_2)
+    @user_1.tell(@user_2, @joke_1)
+    @user_1.tell(@user_2, @joke_2)
+    assert_equal @joke_1, @user_2.joke_by_id(1)
+    assert_equal @joke_2, @user_2.joke_by_id(2)
   end
 
 end

@@ -6,8 +6,26 @@ class User
     @jokes = []
   end
 
-  def learn_joke(joke)
+  def learn(joke)
     @jokes << joke
   end
 
+  def tell(user, joke)
+    user.jokes << joke
+  end
+
+  def joke_by_id
+
+  end
+
 end
+
+# pry(main)> ali.jokes
+# # => [#<Joke:0x00007fb71da169f0...>, #<Joke:0x00007fb71d8e0bd0...>]
+#
+# pry(main)> ali.joke_by_id(1)
+# # => #<Joke:0x00007fb71da169f0...>
+#
+# pry(main)> ali.joke_by_id(2)
+# # => #<Joke:0x00007fb71d8e0bd0...>
+# ```

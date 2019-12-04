@@ -37,9 +37,9 @@ class OpenMicTest < Minitest::Test
     open_mic.welcome(sal)
     joke_1 = Joke.new(1, "Why did the strawberry cross the road?", "Because his mother was in a jam.")   
     joke_2 = Joke.new(2, "How do you keep a lion from charging?", "Take away its credit cards.") 
-    joke_3 = Joke.new(3, "How do you keep a lion from charging?", "Take away its credit cards.") 
-    ali.learn(joke_1)  
-    ali.learn(joke_2)  
+    joke_3 = Joke.new(3, "Why is 6 afraid of 7?", "Because 7 8 9.") 
+    ali.learn(joke_1)
+    ali.learn(joke_2) 
     assert_equal false, open_mic.repeated_jokes?
     sal.learn(joke_3)
     assert_equal false, open_mic.repeated_jokes?

@@ -46,7 +46,11 @@ class UserTest < Minitest::Test
     sal.learn(joke_2)
     sal.tell(ali, joke_1)
     sal.tell(ali, joke_2)
+    ali.learn(joke_1)
+    ali.learn(joke_2)
     assert_instance_of Joke, ali.jokes[0]
     assert_instance_of Joke, ali.jokes[1]
+    assert_equal joke_1, ali.joke_by_id(1)
+    assert_equal joke_2, ali.joke_by_id(2)
   end
 end

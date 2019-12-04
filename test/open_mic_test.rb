@@ -22,10 +22,10 @@ class UserTest < Minitest::Test
   end
 
   def test_performers_are_welcomed
-    open_mic.welcome(@sal)
+    @open_mic.welcome(@sal)
     assert_equal [@sal], @open_mic.performers
 
-    open_mic.welcome(@ali)
+    @open_mic.welcome(@ali)
     assert_equal [@sal, @ali], @open_mic.performers
   end
 end

@@ -1,3 +1,5 @@
+require './lib/joke'
+
 class User
 attr_reader :name
 attr_accessor :jokes
@@ -8,7 +10,9 @@ attr_accessor :jokes
   end
 
   def learn(joke)
-    #learn a joke
+    # joke = Joke.new(id, setup, punchline)
+    joke = joke
+    # @jokes << joke
   end
 
 

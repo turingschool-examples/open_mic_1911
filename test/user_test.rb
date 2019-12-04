@@ -14,7 +14,9 @@ class JokeTest < Minitest::Test
     sal = User.new("Sal")
     assert_equal "Sal", sal.name
     assert_equal [], sal.jokes
+     assert_equal [], sal.jokes_id
   end
+
 
   def test_it_can_learn_new_joke
     sal = User.new("Sal")

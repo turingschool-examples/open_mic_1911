@@ -14,4 +14,9 @@ class JokeTest < Minitest::Test
     assert_equal "Why did the strawberry cross the road?", joke.setup
     assert_equal "Because his mother was in a jam.", joke.punchline
   end
+
+  def test_joke_2_is_added
+    joke_2 = Joke.new(2, "How do you keep a lion from charging?", "Take away its credit cards.")
+    assert_equal Joke, joke_2
+  end
 end

@@ -17,9 +17,4 @@ class OpenMic
 
     #false
   end
-
-
-
-
-
 end

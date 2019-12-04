@@ -35,7 +35,4 @@ class OpenMicTest < Minitest::Test
     @sal.learn(@joke_1)
     assert_equal true, @open_mic.repeated_jokes?
   end
-
-
-
 end

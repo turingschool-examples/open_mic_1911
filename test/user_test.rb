@@ -3,7 +3,7 @@ require 'minitest/pride'
 require './lib/user'
 require './lib/joke'
 
-class JokeTest < Minitest::Test
+class UserTest < Minitest::Test
 
   def setup
     @sal = User.new("Sal")
@@ -51,10 +51,8 @@ class JokeTest < Minitest::Test
     @sal.learn(joke_2)
     @sal.tell(@ali, joke_1)
     @sal.tell(@ali, joke_2)
-    
+
     assert_equal joke_1, @ali.joke_by_id(1)
     assert_equal joke_2, @ali.joke_by_id(2)
   end
-
-
 end

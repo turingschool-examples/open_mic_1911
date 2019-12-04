@@ -1,6 +1,9 @@
+require 'simplecov'
+SimpleCov.start
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/joke'
+require './lib/user'
 
 class JokeTest < Minitest::Test
   def test_it_exists

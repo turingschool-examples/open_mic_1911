@@ -40,6 +40,8 @@ class UserTest < Minitest::Test
     sal.tell(ali, joke_1)
     sal.tell(ali, joke_2)
     assert_equal 2, ali.jokes.length
+    assert_equal "How do you keep a lion from charging?", ali.jokes[1].setup
+    assert_equal "Why did the strawberry cross the road?", ali.jokes[0].setup
   end
 
   def test_you_can_reference_joke_by_id

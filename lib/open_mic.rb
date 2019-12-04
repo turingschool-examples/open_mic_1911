@@ -14,13 +14,13 @@ class OpenMic
   end
 
   def all_jokes
-    all_jokes = []
+    collection_of_jokes = []
     @performers.each do |performer|
       performer.jokes.each do |joke|
-        all_jokes << joke
+        collection_of_jokes << joke
       end
     end
-    all_jokes
+    collection_of_jokes
   end
 
   def repeated_jokes?

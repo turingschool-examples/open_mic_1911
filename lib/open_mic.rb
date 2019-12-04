@@ -10,4 +10,12 @@ class OpenMic
   def welcome(performer_name)
     @performers.push(performer_name)
   end
+
+  def repeated_jokes?
+    performed_jokes = performers.map do |performer|
+      performer.jokes
+    end
+
+  end
+
 end

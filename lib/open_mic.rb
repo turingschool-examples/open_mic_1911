@@ -20,13 +20,13 @@ class OpenMic
     #   return false if there are no duplicates (.uniq ?, find_all ?, any?)
     #   return true if there is duplicates in the joke array.
     performed_jokes = @performers.map do |performer|
-      performer.jokes
-    end
-
-    if performed_jokes.uniq.length == performed_jokes.length
-      return false
-    else
-      return true
+      performer.jokes.each do |joke|
+        if performer.jokes.include?(joke)
+          return true
+        else
+          return false
+        end
+      end
     end
   end
 

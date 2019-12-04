@@ -10,4 +10,13 @@ class OpenMic
   def welcome(performer)
     @performers << performer
   end
+
+  def repeated_jokes?
+    joke_ids = []
+    @performers.each do |performer|
+      performer.jokes.each { |joke| joke_ids << joke.id }
+    end
+    return (joke_ids.count != joke_ids.uniq.count)
+
+  end
 end

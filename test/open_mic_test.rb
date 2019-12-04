@@ -27,15 +27,16 @@ class OpenMicTest < Minitest::Test
   end
 
   def test_open_mic_repeated_jokes_method
-    skip
     joke_1 = Joke.new(1, "Why did the strawberry cross the road?", "Because his mother was in a jam.")
     joke_2 = Joke.new(2, "How do you keep a lion from charging?", "Take away its credit cards.")
+    @open_mic.welcome(@sal)
+    @open_mic.welcome(@ali)
 
     @ali.learn(joke_1)
     @ali.learn(joke_2)
-    assert_equal false, open_mic.repeated_jokes?
+    refute @open_mic.repeated_jokes?
 
     @sal.learn(joke_1)
-    assert true, open_mic.repeated_jokes?
+    assert @open_mic.repeated_jokes?
   end
 end

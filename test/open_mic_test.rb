@@ -31,10 +31,22 @@ class OpenMicTest < Minitest::Test
     open_mic.welcome(sal)
     open_mic.welcome(ali)
 
+    assert_equal [sal, ali], open_mic.performers
+
+    joke_1 = Joke.new(1, "Why did the strawberry cross the road?", "Because
+                      his mother was in a jam.")
+    joke_2 = Joke.new(2, "How do you keep a lion from charging?", "Take away its
+                      credit cards.")
+
     ali.learn(joke_1)
     ali.learn(joke_2)
+
+
+    assert_equal false, open_mic.repeated_jokes?
 binding.pry
-    open_mic.repeated_jokes
+    sal.learn(joke_1)
+# binding.pry
+    assert_equal true, open_mic.repeated_jokes?
   end
 
 

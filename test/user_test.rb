@@ -19,6 +19,12 @@ class UserTest < Minitest::Test
     assert_equal [], @sal.jokes
   end
 
+  def test_user_can_learn_jokes
+    @sal.learn(@joke_1)
+    @sal.learn(@joke_2)
+    assert_equal [@joke_1, @joke_2], @sal.jokes
+  end
+
 
 
 end

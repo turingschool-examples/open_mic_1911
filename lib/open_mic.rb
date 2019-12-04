@@ -15,12 +15,13 @@ class OpenMic
     locate = Hash.new {|hash, key| hash[key] = []}
 
     @performers.each do |joke|
-      locate[joke.user.id] << joke
+      locate[joke.jokes.id] << joke
     end
 
-    if locate < 2<return false
+    if locate < 2
+      return false
     else
       return true
     end
-
+end
 end

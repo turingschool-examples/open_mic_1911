@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/joke'
 require './lib/user'
-
+require 'pry'
 class UserTest < Minitest::Test
   def test_it_exists
     sal = User.new("Sal")
@@ -46,9 +46,13 @@ class UserTest < Minitest::Test
                         his mother was in a jam.")
       joke_2 = Joke.new(2, "How do you keep a lion from charging?", "Take away its credit
                         cards.")
-      sal.learn(joke_1)
-      sal.learn(joke_2)
-
+      ali.learn(joke_1)
+      ali.learn(joke_2)
+# binding.pry
+      assert_equal [joke_1, joke_2], ali.jokes
+      assert_equal [joke_1], ali.joke_by_id(1)
+      assert_equal [joke_2], ali.joke_by_id(2)
+    end
 
 
 

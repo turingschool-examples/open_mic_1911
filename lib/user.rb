@@ -10,4 +10,15 @@ class User
     @jokes << joke
   end
 
+  def tell(user, joke)
+    user.jokes << joke
+  end
+
+  def joke_by_id(id)
+    # require "pry"; binding.pry
+    [@jokes.find do |joke|
+      joke.id == id
+    end]
+  end
+
 end

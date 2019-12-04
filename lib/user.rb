@@ -7,7 +7,11 @@ class User
     @jokes = []
   end
 
-  def learn(add)
-    @jokes << add
+  def learn(joke)
+    @jokes << joke
+  end
+
+  def tell(jokester, joke)
+    jokester.learn(joke)
   end
 end

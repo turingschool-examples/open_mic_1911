@@ -34,5 +34,4 @@ class Joke
   def punchline
     "Because his mother was in a jam."
   end
-
 end

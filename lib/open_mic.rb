@@ -6,4 +6,8 @@ class OpenMic
     @date = attributes[:date]
     @performers = []
   end
+
+  def welcome(person)
+    @performers << person
+  end
 end

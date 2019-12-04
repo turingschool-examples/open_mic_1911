@@ -5,6 +5,6 @@ class Joke
     @id = id
     @setup = setup
     @punchline = punchline
-
   end
+  
 end

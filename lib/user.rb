@@ -12,5 +12,11 @@ class User
 
   def tell(tellee, joke)
     tellee.jokes << joke
-  end 
+  end
+
+  def joke_by_id(id)
+    @jokes.each do |joke|
+      return joke if joke.id == id 
+    end
+  end
 end

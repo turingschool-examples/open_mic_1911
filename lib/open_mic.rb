@@ -8,4 +8,13 @@ class OpenMic
     @performers = []
     # require "pry"; binding.pry
   end
+
+  def welcome(user)
+    @performers << user
+  end
+
+  def repeated_jokes?
+    require "pry"; binding.pry
+  end
+
 end

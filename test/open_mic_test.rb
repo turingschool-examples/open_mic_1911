@@ -1,30 +1,4 @@
 
-# pry(main)> sal = User.new("Sal")
-# # => #<User:0x00007fe8fda12a00...>
-#
-# pry(main)> ali = User.new("Ali")
-# # => #<User:0x00007fe8ff0dddc0...>
-#
-# pry(main)> open_mic.welcome(sal)
-#
-# pry(main)> open_mic.welcome(ali)
-#
-# pry(main)> open_mic.performers
-# # => [#<User:0x00007fe8fda12a00...>, #<User:0x00007fe8ff0dddc0...>]
-#
-# pry(main)> joke_1 = Joke.new(1, "Why did the strawberry cross the road?", "Because his mother was in a jam.")
-# # => #<Joke:0x00007fe8fd892978...>
-#
-# pry(main)> joke_2 = Joke.new(2, "How do you keep a lion from charging?", "Take away its credit cards.")
-# # => #<Joke:0x00007fe8fe19f250...>
-#
-# pry(main)> ali.learn(joke_1)
-#
-# pry(main)> ali.learn(joke_2)
-#
-# pry(main)> open_mic.repeated_jokes?
-# # => false
-#
 # pry(main)> sal.learn(joke_1)
 #
 # pry(main)> open_mic.repeated_jokes?
@@ -57,7 +31,8 @@ class OpenMicTest < Minitest::Test
     assert_equal [], open_mic.performers
   end
 
-  def test_
+  def test_welcome_performers
+    open_mic = OpenMic.new({location: "Comedy Works", date: "11-20-18"})
     sal = User.new("Sal")
     ali = User.new("Ali")
 
@@ -65,6 +40,38 @@ class OpenMicTest < Minitest::Test
     open_mic.welcome(ali)
 
     assert_equal [sal, ali], open_mic.performers
+  end
+
+  def test_no_repeated_jokes
+    open_mic = OpenMic.new({location: "Comedy Works", date: "11-20-18"})
+    sal = User.new("Sal")
+    ali = User.new("Ali")
+    open_mic.welcome(sal)
+    open_mic.welcome(ali)
+
+    joke_1 = Joke.new(1, "Why did the strawberry cross the road?", "Because his mother was in a jam.")
+    joke_2 = Joke.new(2, "How do you keep a lion from charging?", "Take away its credit cards.")
+    ali.learn(joke_1)
+    ali.learn(joke_2)
+
+    refute open_mic.repeated_jokes?
+  end
+
+  def test_repeated_jokes
+    open_mic = OpenMic.new({location: "Comedy Works", date: "11-20-18"})
+    sal = User.new("Sal")
+    ali = User.new("Ali")
+    open_mic.welcome(sal)
+    open_mic.welcome(ali)
+
+    joke_1 = Joke.new(1, "Why did the strawberry cross the road?", "Because his mother was in a jam.")
+    joke_2 = Joke.new(2, "How do you keep a lion from charging?", "Take away its credit cards.")
+    ali.learn(joke_1)
+    ali.learn(joke_2)
+
+    sal.learn(joke_1)
+
+    assert open_mic.repeated_jokes?
   end
 
 end

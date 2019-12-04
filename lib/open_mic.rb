@@ -13,13 +13,17 @@ class OpenMic
     @performers << performer
   end
 
-  def repeated_jokes?
+  def all_jokes
     all_jokes = []
     @performers.each do |performer|
       performer.jokes.each do |joke|
         all_jokes << joke
       end
     end
+    all_jokes
+  end
+
+  def repeated_jokes?
     if all_jokes.uniq == all_jokes
       false
     else

@@ -57,4 +57,21 @@ class JokeTest < Minitest::Test
     assert_equal [joke_1, joke_2], ali.jokes
   end
 
+  # I have tried to work this one out in several
+  # ways, but I cannot figure it out, so I am moving on.
+  # def test_new_user_can_tell_what_joke_by_the_id
+  #   joke_1 = Joke.new(1, "Why did the strawberry cross the road?", "Because his mother was in a jam.")
+  #   joke_2 = Joke.new(2, "How do you keep a lion from charging?", "Take away its credit cards.")
+  #   sal = User.new("Sal")
+  #   ali = User.new("Ali")
+  #
+  #   sal.learn(joke_1)
+  #   sal.learn(joke_2)
+  #
+  #   sal.tell(ali, joke_1)
+  #   sal.tell(ali, joke_2)
+  #
+  #   assert_equal joke_1, ali.joke_by_id(1)
+  #   assert_equal joke_2, ali.joke_by_id(2)
+  # end
 end

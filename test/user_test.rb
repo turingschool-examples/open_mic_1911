@@ -16,6 +16,7 @@ class UserTest < Minitest::Test
   end
 
   def test_attributes
-
+    assert_equal "Sal", @sal.name
+    assert_equal [], @sal.jokes 
   end
 end

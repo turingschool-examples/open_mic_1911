@@ -10,6 +10,12 @@ class OpenMicTest < Minitest::Test
   end
 
   def test_it_exists
-    assert OpenMic, @open_mic
+    assert_instance_of OpenMic, @open_mic
+  end
+
+  def test_it_has_a_location_and_date_and_performers
+    assert_equal "Comedy Works", @open_mic.location
+    assert_equal "11-20-18", @open_mic.date
+    assert_equal [], @open_mic.performers
   end
 end

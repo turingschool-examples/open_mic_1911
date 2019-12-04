@@ -1,8 +1,8 @@
 class OpenMic
 
-  def initialize({location:, date:})
+  def initialize(location:, date:)
     @location = location
-    @date = location
+    @date = date
   end
 
 

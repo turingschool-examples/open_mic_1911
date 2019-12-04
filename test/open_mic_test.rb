@@ -15,5 +15,6 @@ class OpenMicTest < Minitest::Test
 
   def test_attributes
     assert_equal  "Comedy Works", @open_mic.location
+    assert_equal  "11-20-18", @open_mic.date
   end
 end

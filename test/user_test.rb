@@ -26,10 +26,17 @@ class UserTest < Minitest::Test
   def test_user_can_tell_jokes
     @sal.learn(@joke_1)
     @sal.learn(@joke_2)
-    binding.pry
+
     @sal.tell(@ali, @joke_1)
     assert_equal @ali.jokes[0], @joke_1
-    binding.pry
+
+  end
+
+  def test_jokes_can_be_returned_by_id
+    @ali.learn(@joke_1)
+    @ali.learn(@joke_2)
+    assert_equal @ali.joke_by_id(1), @ali.jokes[0]
+    assert_equal @ali.joke_by_id(2), @ali.jokes[1]
   end
 
 end

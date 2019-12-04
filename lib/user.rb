@@ -18,4 +18,13 @@ attr_reader :name, :jokes
     who.jokes << what
   end
 
+  def joke_by_id(number)
+    # binding.pry
+    # self.select {|number| self.jokes.id}
+    self.jokes.each do |search|
+      if search.id == number
+        return search
+      end
+    end
+  end
 end

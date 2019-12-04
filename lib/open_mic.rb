@@ -12,19 +12,21 @@ class OpenMic
   end
 
   def repeated_jokes?
-    performed_jokes = performers.map do |performer|
+    # check if the jokes the performers have match
+    # any jokes that exist in the open mic
+    
+    # create array of all jokes said in open mic
+    #   check that array against incoming jokes from other artists
+    #   return false if there are no duplicates (.uniq ?, find_all ?, any?)
+    #   return true if there is duplicates in the joke array.
+    performed_jokes = @performers.map do |performer|
       performer.jokes
     end
 
-    @performers.each do |performer|
-      # require 'pry'; binding.pry
-      performed_jokes.each do |joke|
-        if performed_jokes.find(joke) == nil
-          return false
-        else
-          return true
-        end
-      end
+    if performed_jokes.uniq.length == performed_jokes.length
+      return false
+    else
+      return true
     end
   end
 

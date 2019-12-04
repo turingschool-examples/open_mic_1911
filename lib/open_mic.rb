@@ -20,13 +20,20 @@ class OpenMic
   end
 
   def repeated_jokes?
-    per_jokes = []
-    @performers.each do |performer|
-        per_jokes << performer.jokes
+    @performers.map do |performer|
+      performer.jokes.any? do |joke|
+        # require "pry"; binding.pry
+        joke == joke
+      end
     end
-    per_jokes.any? do |same_joke|
-      same_joke ==  same_joke
-    end
+
+    # per_jokes = []
+    # @performers.each do |performer|
+    #     per_jokes << performer.jokes
+    # end
+    # per_jokes.any? do |same_joke|
+    #   same_joke ==  same_joke
+    # end
   end
 
 end

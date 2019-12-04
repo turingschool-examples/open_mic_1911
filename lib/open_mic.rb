@@ -19,9 +19,10 @@ class OpenMic
 			end
 		end
 		if jokes.count == jokes.uniq.count
-			return true
-		else
 			return false
+		else
+			return true
 		end
+	require 'pry'; binding.pry
 	end
 end

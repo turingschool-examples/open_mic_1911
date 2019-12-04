@@ -32,14 +32,18 @@ class OpenMicTest < Minitest::Test
 		@open_mic.welcome(@sal)
 		@open_mic.welcome(@ali)
 		assert_equal @open_mic.performers.count, 2
-		binding.pry
+		#binding.pry
 	end
 
 	def test_repeated_jokes?
+		@open_mic.welcome(@sal)
+		@open_mic.welcome(@ali)
 		@ali.learn(@joke_1)
 		@ali.learn(@joke_2)
 		assert_equal @open_mic.repeated_jokes?, false
+		binding.pry
 		@sal.learn(@joke_1)
+		binding.pry
 		assert_equal @open_mic.repeated_jokes?, true
 	end
 end

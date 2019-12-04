@@ -13,9 +13,8 @@ class OpenMic
   end
 
   def repeated_jokes?
-    all_jokes = []
-    @performers.each do |user|
-      all_jokes.push(user.jokes)
+    all_jokes = @performers.map do |user|
+      user.jokes
     end
     if all_jokes.flatten.uniq! == nil
       false

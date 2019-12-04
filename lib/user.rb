@@ -14,8 +14,10 @@ class User
     user.jokes << joke
   end
 
-  def joke_by_id
-
+  def joke_by_id(ident)
+    @jokes.find do |joke|
+      joke.id == ident
+    end
   end
 
 end

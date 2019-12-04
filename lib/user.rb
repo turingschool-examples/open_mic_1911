@@ -12,4 +12,12 @@ class User
     @jokes.push(joke)
   end
 
+  def tell(to_user, joke)
+    to_user.learn(joke)
+  end
+
+  def joke_by_id(id)
+    @jokes.find { |joke| joke.id == id}
+  end
+
 end

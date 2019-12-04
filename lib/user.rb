@@ -1,6 +1,6 @@
 class User
-attr_reader :name
-attr_accessor :jokes
+# attr_reader :name
+attr_accessor :jokes, :name
 
   def initialize(name)
     @name = name
@@ -8,6 +8,10 @@ attr_accessor :jokes
   end
 
   def learn(joke)
+    @jokes << joke
+  end
+
+  def tell(name, joke)
     @jokes << joke
   end
 end

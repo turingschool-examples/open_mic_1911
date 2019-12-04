@@ -34,9 +34,12 @@ class OpenMicTest < Minitest::Test
   end
 
   def test_it_can_detect_repeated_jokes
+    @open_mic.welcome(@sal)
+    @open_mic.welcome(@ali)
+
     @ali.learn(@joke_1)
     @ali.learn(@joke_2)
-
+    require "pry"; binding.pry
     refute @open_mic.repeated_jokes?
 
     @sal.learn(@joke_1)

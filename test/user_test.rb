@@ -26,12 +26,15 @@ class UserTest < Minitest::Test
       assert_equal [@joke_1, @joke_2], @sal.jokes
   end
 
-  def test_sal_can_tell_jokes_to_ali
-    skip
+  def test_ali_can_learn_jokes
+    @sal.tell(@ali, @joke_1)
+    @sal.tell(@ali, @joke_2)
+    assert_equal [@joke_1, @joke_2], @ali.jokes
   end
 
   def test_joke_by_id
-    skip
+    assert_equal @joke_1, @ali.joke_by_id(1)
+    assert_equal @joke_2, @ali.joke_by_id(2)
   end
 
 

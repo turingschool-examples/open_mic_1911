@@ -13,8 +13,11 @@ attr_accessor :jokes
     # joke = Joke.new(id, setup, punchline)
     joke = joke
     # @jokes << joke
+    # @jokes << joke
   end
 
-
-
+  def add_jokes_to_array
+    jokes = []
+    jokes << self.learn(joke)
+  end
 end

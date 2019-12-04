@@ -7,8 +7,9 @@ attr_accessor :jokes
     @jokes = []
   end
 
-  def learn
-  end 
+  def learn(joke)
+    #learn a joke
+  end
 
 
 

@@ -13,5 +13,6 @@ class OpenMic
   end
 
   def repeated_jokes?
-  end 
+    
+  end
 end

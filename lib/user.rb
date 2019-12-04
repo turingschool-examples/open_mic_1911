@@ -17,4 +17,10 @@ class User
     name.learn(joke)
   end
 
+  def joke_by_id(joke_id)
+    id_joke = @jokes.select { |joke| joke.id == joke_id }
+
+    id_joke[0]
+  end
+
 end

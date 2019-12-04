@@ -14,4 +14,8 @@ attr_reader :name, :jokes
     @jokes << joke
   end
 
+  def tell(who, what)
+    who.jokes << what
+  end
+
 end

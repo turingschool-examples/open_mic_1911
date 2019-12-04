@@ -7,6 +7,7 @@ class UserTest < Minitest::Test
 
   def setup
     @sal = User.new("Sal")
+    @ali = User.new("Ali")
     @joke_1 = Joke.new(1, "Why did the strawberry cross the road?", "Because his mother was in a jam.")
     @joke_2 = Joke.new(2, "How do you keep a lion from charging?", "Take away its credit cards.")
   end
@@ -21,4 +22,14 @@ class UserTest < Minitest::Test
     @sal.learn(@joke_2)
     assert_equal @sal.jokes[1], @joke_2
   end
+
+  def test_user_can_tell_jokes
+    @sal.learn(@joke_1)
+    @sal.learn(@joke_2)
+    binding.pry
+    @sal.tell(@ali, @joke_1)
+    assert_equal @ali.jokes[0], @joke_1
+    binding.pry
+  end
+
 end

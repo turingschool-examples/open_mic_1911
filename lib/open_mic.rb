@@ -20,40 +20,12 @@ class OpenMic
   end
 
   def repeated_jokes?
-    @performers.map do |performer|
+    r_joke = @performers.map do |performer|
       performer.jokes.any? do |joke|
-        # require "pry"; binding.pry
         joke == joke
       end
     end
-
-    # per_jokes = []
-    # @performers.each do |performer|
-    #     per_jokes << performer.jokes
-    # end
-    # per_jokes.any? do |same_joke|
-    #   same_joke ==  same_joke
-    # end
+    r_joke.first
   end
 
 end
-
-
-# pry(main)> joke_1 = Joke.new(1, "Why did the strawberry cross the road?", "Because his mother was in a jam.")
-# # => #<Joke:0x00007fe8fd892978...>
-#
-# pry(main)> joke_2 = Joke.new(2, "How do you keep a lion from charging?", "Take away its credit cards.")
-# # => #<Joke:0x00007fe8fe19f250...>
-#
-# pry(main)> ali.learn(joke_1)
-#
-# pry(main)> ali.learn(joke_2)
-#
-# pry(main)> open_mic.repeated_jokes?
-# # => false
-#
-# pry(main)> sal.learn(joke_1)
-#
-# pry(main)> open_mic.repeated_jokes?
-# # => true
-# ```

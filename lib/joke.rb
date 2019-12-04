@@ -1,5 +1,8 @@
 class Joke
-  def initialize(num, joke, punchline)
+  def initialize(id, setup, punchline)
+    @id = id
+    @setup = setup
+    @punchline = punchline
 
   end
 end

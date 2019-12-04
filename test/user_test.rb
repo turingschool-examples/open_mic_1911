@@ -14,4 +14,11 @@ class UserTest < Minitest::Test
   def test_user_exists
     assert_instance_of User, @sal
   end
+
+  def test_user_can_learn_jokes
+    @sal.learn(@joke_1)
+    assert_equal @sal.jokes[0] , @joke_1
+    @sal.learn(@joke_2)
+    assert_equal @sal.jokes[1], @joke_2
+  end
 end

@@ -20,4 +20,8 @@ class User
       joke.id == id
     end
   end
+
+  def repeated_jokes?
+
+  end
 end

@@ -11,4 +11,7 @@ class OpenMic
   def welcome(performer)
     @performers << performer
   end
+
+  def repeated_jokes?
+  end 
 end

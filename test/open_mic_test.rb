@@ -16,4 +16,29 @@ class OpenMicTest < Minitest::Test
     assert_equal open_mic.date, "11-20-18"
   end
 
+  def test_it_can_welcome_user
+    open_mic = OpenMic.new({location: "Comedy Works", date: "11-20-18"})
+    sal = User.new("Sal")
+    ali = User.new("Ali")
+    open_mic.welcome(sal)
+    open_mic.welcome(ali)
+    assert_equal 2, open_mic.performers.length
+  end
+
+  def test_for_repeated_jokes
+    open_mic = OpenMic.new({location: "Comedy Works", date: "11-20-18"})
+    sal = User.new("Sal")
+    ali = User.new("Ali")
+    open_mic.welcome(sal)
+    open_mic.welcome(ali)
+    ali.learn(joke_1)
+    ali.learn(joke_2)
+    refute open_mic.repeated_jokes?
+    sal.learn(joke_1)
+    assert open_mic.repeated_jokes?
+
+
+
+  end
+
 end

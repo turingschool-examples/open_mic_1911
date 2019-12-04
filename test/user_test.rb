@@ -10,11 +10,11 @@ class UserTest < Minitest::Test
      @sal = User.new("Sal")
      @joke_1 = Joke.new(1, "Why did the strawberry cross the road?", "Because his mother was in a jam.")
      @joke_2 = Joke.new(2, "How do you keep a lion from charging?", "Take away its credit cards.")
+     @ali = User.new("Ali")
    end
 
   def test_it_exists
-     sal = User.new ("Sal")
-
+     @sal
      assert_instance_of User, @sal
   end
 
@@ -31,5 +31,14 @@ class UserTest < Minitest::Test
     assert_equal @joke_2, @sal.jokes[1]
   end
 
+  def test_can_tell_jokes_to_someone
+    @sal.learn_joke(@joke_1)
+    @sal.learn_joke(@joke_2)
+    @sal.tell_joke(@ali, @joke_1)
+    @sal.tell_joke(@ali, @joke_2)
+
+    assert_equal @joke_1, @ali.jokes[0]
+    assert_equal @joke_2, @ali.jokes[1]
+  end
 
 end

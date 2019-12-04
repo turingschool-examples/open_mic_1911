@@ -18,4 +18,16 @@ class OpenMicTest < Minitest::Test
     assert_equal "11-20-18", open_mic.date
     assert_equal [], open_mic.performers
   end
+
+  def test_can_add_performers
+    open_mic = OpenMic.new({location: "Comedy Works", date: "11-20-18"})
+
+    sal = User.new("Sal")
+    ali = User.new("Ali")
+
+    open_mic.welcome(sal)
+    open_mic.welcome(ali)
+
+    assert_equal [sal, ali], open_mic.performers
+  end
 end

@@ -6,5 +6,8 @@ class OpenMic
     @date = open_mic_info[:date]
     @performers = []
   end
-  
+
+  def welcome(performer_name)
+    @performers.push(performer_name)
+  end
 end

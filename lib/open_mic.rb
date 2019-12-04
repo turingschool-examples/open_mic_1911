@@ -19,9 +19,14 @@ class OpenMic
     @performers << performer
   end
 
-  def repeated_jokes
-    # return true if 
-
+  def repeated_jokes?
+    per_jokes = []
+    @performers.each do |performer|
+        per_jokes << performer.jokes
+    end
+    per_jokes.any? do |same_joke|
+      same_joke ==  same_joke
+    end
   end
 
 end

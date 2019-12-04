@@ -15,7 +15,17 @@ class OpenMic
     performed_jokes = performers.map do |performer|
       performer.jokes
     end
-    
+
+    @performers.each do |performer|
+      # require 'pry'; binding.pry
+      performed_jokes.each do |joke|
+        if performed_jokes.find(joke) == nil
+          return false
+        else
+          return true
+        end
+      end
+    end
   end
 
 end

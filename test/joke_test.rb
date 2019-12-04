@@ -22,4 +22,13 @@ class JokeTest < Minitest::Test
     assert_equal "Sal", sal.name
     assert_equal [], sal.jokes
   end
+
+  def test_multiple_jokes
+    joke = Joke.new(1, "Why did the strawberry cross the road?", "Because his moether was in a jam.")
+    sal = User.new("Sal")
+    assert_equal 1, "Why did the strawberry cross the road?", "Because it's mother was in a jam."
+    assert_equal 2, "How do you keep a lion from charging?", "Take away its credit cards."
+  end
+
+
 end

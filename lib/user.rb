@@ -6,9 +6,9 @@ class User
     @jokes = []
   end
 
-  def learn(id)
-    @jokes << joke
-require "pry"; binding.pry
+  def learn(joke_1)
+    @jokes << joke_1 
+
   end
 
 

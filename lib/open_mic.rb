@@ -14,13 +14,14 @@ class OpenMic
   def repeated_jokes?
     joke_id = []
     performers.each do |performer|
-    require "pry"; binding.pry
+    #require "pry"; binding.pry
       if performer.jokes == []
         false
       elsif
       performer.jokes.each do |joke|
-        require "pry"; binding.pry
+        #require "pry"; binding.pry
          joke_id << joke.id
+       end
       end
     end
 

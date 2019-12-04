@@ -27,5 +27,4 @@ class OpenMic
     end
     r_joke.first
   end
-
 end

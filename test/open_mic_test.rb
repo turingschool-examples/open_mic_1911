@@ -35,9 +35,8 @@ class OpenMicTest < Minitest::Test
     @open_mic.welcome(@user_2)
     @user_2.learn(@joke_1)
     @user_2.learn(@joke_2)
-
     assert_equal false, @open_mic.repeated_jokes?
-    
+
     @user_1.learn(@joke_1)
     assert_equal true, @open_mic.repeated_jokes?
   end

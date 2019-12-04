@@ -16,8 +16,24 @@ class OpenMic
     @comp["#{user.name} jokes"] << user.jokes
   end
 
+  def duplicate_count(array) # researched online and found this. Tinkered with it
+    #to work with my code but it is not mine.
+    array.each_with_object(Hash.new(0)) do |value, hash|
+      hash[value] += 1
+    end.count do |(value,count)|
+      count > 1
+    end
+  end
+
+  def all_jokes
+    all_jokes = comp.values
+    all_jokes.flatten!
+    all_jokes
+  end
+
   def repeated_jokes?
-    require "pry"; binding.pry
+    return true if duplicate_count(all_jokes) >= 1
+    false
   end
 
 end

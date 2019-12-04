@@ -10,4 +10,9 @@ class OpenMic
   def welcome(performer)
     @performers << performer
   end
+
+  def repeated_jokes?
+    @performers[1].jokes.include?(@performers[0].jokes[0])
+    # require "pry"; binding.pry
+  end
 end

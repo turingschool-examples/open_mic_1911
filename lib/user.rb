@@ -9,4 +9,5 @@ class User
     def jokes
       []
     end
+    
 end

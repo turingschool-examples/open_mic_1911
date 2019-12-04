@@ -1,4 +1,4 @@
-# OpenMic
+ OpenMic
 
 ### Setup
 

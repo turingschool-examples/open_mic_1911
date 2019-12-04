@@ -42,14 +42,14 @@ class OpenMicTest < Minitest::Test
 
     ali.learn(joke_1)
     ali.learn(joke_2)
+    sal.learn(joke_1)
 
-    open_mic.welcome(sal)
     open_mic.welcome(ali)
 
     assert_equal false, open_mic.repeated_jokes?
 
-    sal.learn(joke_1)
-
+    open_mic.welcome(sal)
+    
     assert_equal true, open_mic.repeated_jokes?
   end
 end

@@ -12,4 +12,16 @@ class OpenMic
 	end
 
 	def repeated_jokes?
-		jokes = @performs.
+		jokes = []
+		@performers.each do |user|
+			user.jokes.each do |joke|
+				jokes << joke
+			end
+		end
+		if jokes.count == jokes.uniq.count
+			return true
+		else
+			return false
+		end
+	end
+end

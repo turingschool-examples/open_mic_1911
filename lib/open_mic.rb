@@ -15,7 +15,7 @@ class OpenMic
     performed_jokes = performers.map do |performer|
       performer.jokes
     end
-
+    
   end
 
 end

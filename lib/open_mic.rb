@@ -1,9 +1,9 @@
 class OpenMic
   attr_reader :location, :date, :performers
 
-  def initialize(hash)
-    @location = hash[:location]
-    @date = hash[:date]
+  def initialize(openmic_info)
+    @location = openmic_info[:location]
+    @date = openmic_info[:date]
     @performers = []
   end
 
@@ -12,16 +12,11 @@ class OpenMic
   end
 
   def repeated_jokes?
-    locate = Hash.new {|hash, key| hash[key] = []}
-
-    @performers.each do |joke|
-      locate[joke.jokes.id] << joke
-    end
-
-    if locate < 2
-      return false
+    jokes = @performers.map {|user| user.jokes}.flatten
+    if jokes.uniq! == nil
+      false
     else
-      return true
+      true
     end
-end
+  end
 end
